@@ -1,0 +1,58 @@
+<%= form_with(model: invoice, local: true) do |form| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+      <% invoice.errors.full_messages.each do |message| %>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+    <%= message %>
+  </div>
+</div>
+        
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :invoice_no ,class: "form-label"%>
+    <%= form.text_field :invoice_no ,class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date ,class: "form-label" %>
+    <%= form.text_field :date,class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buyer ,class: "form-label" %>
+    <%= form.text_field :buyer ,class: "form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :product ,class: "form-label"  %>
+    <%= form.text_field :product ,class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qty ,class: "form-label"  %>
+    <%= form.text_field :qty ,class: "form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :price ,class: "form-label"  %>
+    <%= form.text_field :price ,class: "form-control"%>
+  </div>
+
+  <div class="field">
+    
+    <%= form.number_field :user_id, id: :invoice_user_id ,class: "form-control" , value: current_user.id, type: :hidden%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Invoice no:</strong>
+  <%= @invoice.invoice_no %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invoice.date %>
+</p>
+
+<p>
+  <strong>Buyer:</strong>
+  <%= @invoice.buyer %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @invoice.product %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @invoice.qty %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @invoice.price %>
+</p>
+<%= link_to 'Edit', edit_invoice_path(@invoice), class: "btn btn-secondary" %> 
+<br>
+<br>
+<%= link_to 'Back', invoices_path, class: "btn btn-secondary" %>

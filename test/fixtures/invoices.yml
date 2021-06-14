@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_no: 
+  date: MyString
+  buyer: MyString
+  product: MyString
+  qty: 
+  price: 
+
+two:
+  invoice_no: 
+  date: MyString
+  buyer: MyString
+  product: MyString
+  qty: 
+  price: 
